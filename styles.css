@@ -1,0 +1,41 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #202020;
+}
+
+.calculator {
+  width: 80%;
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #303030;
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
+}
+
+.slider {
+  margin-bottom: 20px;
+}
+
+.slider label {
+  display: block;
+  margin-bottom: 5px;
+  color: #ffffff;
+}
+
+.slider input[type="range"] {
+  width: 100%;
+}
+
+.slider span {
+  display: inline-block;
+  width: 50px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.pricing {
+  font-weight: bold;
+  font-size: 24px;
+  color: #00ff00;
+}

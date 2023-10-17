@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <div class="calculator">
+        <div class="slider">
+            <label for="ramSlider">RAM (GB):</label>
+            <input type="range" id="ramSlider" min="1" max="64" step="1" value="1">
+            <span id="ramValue">1 GB</span>
+        </div>
+
+        <div class="slider">
+            <label for="threadSlider">Threads:</label>
+            <input type="range" id="threadSlider" min="1" max="16" step="1" value="1">
+            <span id="threadValue">1</span>
+        </div>
+
+        <div class="slider">
+            <label for="storageSlider">Storage (GB):</label>
+            <input type="range" id="storageSlider" min="10" max="100" step="10" value="10">
+            <span id="storageValue">10 GB</span>
+        </div>
+
+        <div class="pricing">
+            Total Price: $<span id="price">0.00</span> per month
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
