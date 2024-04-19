@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const threadPrice = (parseFloat(threadSlider.value) - 1) * 5; // $5 per thread
       const firstThreadPrice = 3; // $3 for first thread
       const storagePrice = ((parseFloat(storageSlider.value) - 10)/5) * 0.5; // $0.5 per 5GB after the first 5GB
-      const totalPrice = ramPrice + threadPrice + firstThreadPrice + storagePrice;
+      const totalPrice = ramPrice + threadPrice + firstThreadPrice + Math.max(storagePrice, 0);
       price.textContent = totalPrice.toFixed(2);
   }
 
