@@ -9,12 +9,20 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Pricing logic (modify as needed)
   function calculatePrice() {
-      const ramPrice = parseFloat(ramSlider.value) * 0.5; // $0.5 per GB
-      const threadPrice = (parseFloat(threadSlider.value) - 1) * 5; // $5 per thread
-      const firstThreadPrice = 3; // $3 for first thread
-      const storagePrice = ((parseFloat(storageSlider.value) - 10)/5) * 0.5; // $0.5 per 5GB after the first 5GB
-      const totalPrice = ramPrice + threadPrice + firstThreadPrice + Math.max(storagePrice, 0);
-      price.textContent = totalPrice.toFixed(2);
+      const ramPrice = parseFloat(ramSlider.value) * 0.30; // $0.30 per GB
+      const threadPrice = (parseFloat(threadSlider.value) - 1) * 0.75; // $0.75 per additional thread
+      const firstThreadPrice = 0.75; // $0.75 for the first thread
+      const storagePrice = ((parseFloat(storageSlider.value) - 10) / 10) * 0.50; // $0.50 per 10GB after the first 10GB
+
+      // Set base prices for initial resources
+      const basePrice = 1.00; // Base price for minimum resources
+
+      const totalPrice = basePrice + ramPrice + threadPrice + firstThreadPrice + Math.max(storagePrice, 0);
+
+      // Apply 50% discount
+      const discountedPrice = totalPrice * 0.50;
+      
+      price.textContent = discountedPrice.toFixed(2);
   }
 
   // Update pricing when sliders change
