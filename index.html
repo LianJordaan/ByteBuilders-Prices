@@ -4,28 +4,42 @@
     <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
+    <div class="banner">
+        <h1>🎉 Special Offer: 50% Off on Server Hosting for the Next Month! 🎉</h1>
+        <p>To celebrate our relaunch, enjoy a 50% discount on all server hosting plans for the next month. Use our calculator to estimate your server costs and take advantage of this limited-time offer!</p>
+    </div>
+
     <div class="calculator">
         <div class="slider">
             <label for="ramSlider">RAM (GB):</label>
-            <input type="range" id="ramSlider" min="1" max="64" step="1" value="1">
-            <span id="ramValue">1 GB</span>
+            <input type="range" id="ramSlider" min="1" max="64" step="1" value="8">
+            <span id="ramValue">8 GB</span>
         </div>
 
         <div class="slider">
-            <label for="threadSlider">Threads:</label>
-            <input type="range" id="threadSlider" min="1" max="16" step="1" value="1">
-            <span id="threadValue">1</span>
+            <label for="cpuPercentageSlider">CPU Allocation (%):</label>
+            <input type="range" id="cpuPercentageSlider" min="50" max="500" step="10" value="200">
+            <span id="cpuPercentageValue">200%</span>
         </div>
 
         <div class="slider">
             <label for="storageSlider">Storage (GB):</label>
-            <input type="range" id="storageSlider" min="5" max="95" step="5" value="5">
-            <span id="storageValue">5 GB</span>
+            <input type="range" id="storageSlider" min="1" max="100" step="1" value="24">
+            <span id="storageValue">24 GB</span>
         </div>
 
         <div class="pricing">
-            Total Price: $<span id="price">0.00</span> per month
+            Total Price: $<span id="price">7.50</span> per month
         </div>
+    </div>
+
+    <div class="features">
+        <h2>Our Features</h2>
+        <ul>
+            <li>💨 1Gbps upload and download internet speed</li>
+            <li>⚡ High-speed SSD disk storage</li>
+            <li>🖥️ Flexible CPU allocation (up to 500% based on 5 cores)</li>
+        </ul>
     </div>
 
     <script src="script.js"></script>
