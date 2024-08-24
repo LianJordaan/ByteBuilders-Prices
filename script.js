@@ -1,38 +1,44 @@
 document.addEventListener('DOMContentLoaded', function() {
   const ramSlider = document.getElementById('ramSlider');
-  const threadSlider = document.getElementById('threadSlider');
+  const cpuPercentageSlider = document.getElementById('cpuPercentageSlider');
   const storageSlider = document.getElementById('storageSlider');
   const ramValue = document.getElementById('ramValue');
-  const threadValue = document.getElementById('threadValue');
+  const cpuPercentageValue = document.getElementById('cpuPercentageValue');
   const storageValue = document.getElementById('storageValue');
   const price = document.getElementById('price');
 
-  // Pricing logic (modify as needed)
+  // Pricing logic
   function calculatePrice() {
-      const ramPrice = parseFloat(ramSlider.value) * 0.30; // $0.30 per GB
-      const threadPrice = (parseFloat(threadSlider.value) - 1) * 0.75; // $0.75 per additional thread
-      const firstThreadPrice = 0.75; // $0.75 for the first thread
-      const storagePrice = ((parseFloat(storageSlider.value) - 10) / 10) * 0.50; // $0.50 per 10GB after the first 10GB
+      const ramValueNum = parseFloat(ramSlider.value);
+      const ramPrice = ramValueNum * 0.25; // $0.25 per GB of RAM
+      const cpuPercentage = parseFloat(cpuPercentageSlider.value);
+      const cpuPrice = (cpuPercentage / 100) * 2; // $2 per 100% CPU allocation
 
-      // Set base prices for initial resources
-      const basePrice = 1.00; // Base price for minimum resources
+      // Minimum disk space is 2 GB per GB of RAM
+      const minDiskSpace = ramValueNum * 3;
+      const storageValueNum = parseFloat(storageSlider.value);
 
-      const totalPrice = basePrice + ramPrice + threadPrice + firstThreadPrice + Math.max(storagePrice, 0);
+      // Calculate additional storage price: $0.20 per GB above the free allowance
+      const additionalStorage = Math.max(storageValueNum - minDiskSpace, 0);
+      const storagePrice = additionalStorage * 0.20; // $0.20 per GB
 
-      // Apply 50% discount
-      const discountedPrice = totalPrice * 0.50;
-      
+      const totalPrice = ramPrice + cpuPrice + storagePrice;
+      const discountedPrice = totalPrice * 0.50; // Apply 50% discount
       price.textContent = discountedPrice.toFixed(2);
   }
 
   // Update pricing when sliders change
   ramSlider.addEventListener('input', () => {
       ramValue.textContent = `${ramSlider.value} GB`;
+      // Update storage slider's minimum value to match the minimum disk space
+      // storageSlider.min = ramSlider.value * 2;
+      storageSlider.value = Math.max(storageSlider.value, storageSlider.min);
+      storageValue.textContent = `${storageSlider.value} GB`;
       calculatePrice();
   });
 
-  threadSlider.addEventListener('input', () => {
-      threadValue.textContent = threadSlider.value;
+  cpuPercentageSlider.addEventListener('input', () => {
+      cpuPercentageValue.textContent = `${cpuPercentageSlider.value}%`;
       calculatePrice();
   });
 
