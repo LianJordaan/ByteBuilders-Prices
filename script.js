@@ -14,13 +14,12 @@ document.addEventListener('DOMContentLoaded', function() {
       const cpuPercentage = parseFloat(cpuPercentageSlider.value);
       const cpuPrice = (cpuPercentage / 100) * 2; // $2 per 100% CPU allocation
 
-      // Minimum disk space is 2 GB per GB of RAM
+      // Minimum disk space is 3 GB per GB of RAM
       const minDiskSpace = ramValueNum * 3;
       const storageValueNum = parseFloat(storageSlider.value);
 
-      // Calculate additional storage price: $0.75 per GB above the free allowance
-      const additionalStorage = Math.max(storageValueNum - minDiskSpace, 0);
-      const storagePrice = additionalStorage * 0.75; // $0.75 per GB
+      // Calculate storage price: $0.20 per GB for all storage
+      const storagePrice = storageValueNum * 0.20;
 
       const totalPrice = ramPrice + cpuPrice + storagePrice;
       const discountedPrice = totalPrice * 0.50; // Apply 50% discount
@@ -30,8 +29,8 @@ document.addEventListener('DOMContentLoaded', function() {
   // Update pricing when sliders change
   ramSlider.addEventListener('input', () => {
       ramValue.textContent = `${ramSlider.value} GB`;
-      // Update storage slider's minimum value to match the minimum disk space
-      // storageSlider.min = ramSlider.value * 2;
+      // Ensure storage slider's value is always at least the minimum required disk space
+      storageSlider.min = ramSlider.value * 3;
       storageSlider.value = Math.max(storageSlider.value, storageSlider.min);
       storageValue.textContent = `${storageSlider.value} GB`;
       calculatePrice();
