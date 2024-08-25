@@ -18,9 +18,9 @@ document.addEventListener('DOMContentLoaded', function() {
       const minDiskSpace = ramValueNum * 3;
       const storageValueNum = parseFloat(storageSlider.value);
 
-      // Calculate additional storage price: $0.20 per GB above the free allowance
+      // Calculate additional storage price: $0.75 per GB above the free allowance
       const additionalStorage = Math.max(storageValueNum - minDiskSpace, 0);
-      const storagePrice = additionalStorage * 0.20; // $0.20 per GB
+      const storagePrice = additionalStorage * 0.75; // $0.75 per GB
 
       const totalPrice = ramPrice + cpuPrice + storagePrice;
       const discountedPrice = totalPrice * 0.50; // Apply 50% discount
