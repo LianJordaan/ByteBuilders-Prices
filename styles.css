@@ -58,10 +58,43 @@ body {
   color: #ffffff;
 }
 
+.info-box {
+  background-color: #444;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 10px 0;
+  font-size: 14px;
+  color: #ffcc00;
+}
+
 .pricing {
   font-weight: bold;
   font-size: 24px;
   color: #00ff00;
+}
+
+.resources {
+  width: 80%;
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #404040;
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
+}
+
+.resources h2 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.resources ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.resources ul li {
+  margin: 10px 0;
 }
 
 .features {
