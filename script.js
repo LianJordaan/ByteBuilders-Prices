@@ -6,6 +6,12 @@ document.addEventListener('DOMContentLoaded', function() {
   const cpuPercentageValue = document.getElementById('cpuPercentageValue');
   const storageValue = document.getElementById('storageValue');
   const price = document.getElementById('price');
+  const additionalStorageInfo = document.getElementById('additionalStorageInfo');
+
+  // Resources section elements
+  const resourceRam = document.getElementById('resourceRam');
+  const resourceCpu = document.getElementById('resourceCpu');
+  const resourceStorage = document.getElementById('resourceStorage');
 
   // Pricing logic
   function calculatePrice() {
@@ -13,26 +19,26 @@ document.addEventListener('DOMContentLoaded', function() {
       const ramPrice = ramValueNum * 0.25; // $0.25 per GB of RAM
       const cpuPercentage = parseFloat(cpuPercentageSlider.value);
       const cpuPrice = (cpuPercentage / 100) * 2; // $2 per 100% CPU allocation
-
-      // Minimum disk space is 3 GB per GB of RAM
-      const minDiskSpace = ramValueNum * 3;
       const storageValueNum = parseFloat(storageSlider.value);
-
-      // Calculate storage price: $0.20 per GB for all storage
-      const storagePrice = storageValueNum * 0.20;
+      const storagePrice = storageValueNum * 0.20; // $0.20 per GB of storage
 
       const totalPrice = ramPrice + cpuPrice + storagePrice;
       const discountedPrice = totalPrice * 0.50; // Apply 50% discount
       price.textContent = discountedPrice.toFixed(2);
+
+      // Update additional storage message
+      const additionalStorage = Math.floor(ramValueNum / 2);
+      additionalStorageInfo.textContent = `You get an additional ${additionalStorage} GB of free storage based on your selected RAM.`;
+
+      // Update the resources section
+      resourceRam.textContent = `${ramValueNum} GB`;
+      resourceCpu.textContent = `${cpuPercentage}%`;
+      resourceStorage.textContent = `${storageValueNum} GB + ${additionalStorage} GB additional based on RAM`;
   }
 
-  // Update pricing when sliders change
+  // Update pricing and resources when sliders change
   ramSlider.addEventListener('input', () => {
       ramValue.textContent = `${ramSlider.value} GB`;
-      // Ensure storage slider's value is always at least the minimum required disk space
-      storageSlider.min = ramSlider.value * 3;
-      storageSlider.value = Math.max(storageSlider.value, storageSlider.min);
-      storageValue.textContent = `${storageSlider.value} GB`;
       calculatePrice();
   });
 
