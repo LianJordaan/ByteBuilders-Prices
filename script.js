@@ -18,12 +18,12 @@ document.addEventListener('DOMContentLoaded', function() {
       const ramValueNum = parseFloat(ramSlider.value);
       const ramPrice = ramValueNum * 0.25; // $0.25 per GB of RAM
       const cpuPercentage = parseFloat(cpuPercentageSlider.value);
-      const cpuPrice = (cpuPercentage / 100) * 1.5; // $2 per 100% CPU allocation
+      const cpuPrice = (cpuPercentage / 100) * 1.5; // $1.5 per 100% CPU allocation
       const storageValueNum = parseFloat(storageSlider.value);
       const storagePrice = storageValueNum * 0.10; // $0.10 per GB of storage 
 
       const totalPrice = ramPrice + cpuPrice + storagePrice;
-      const discountedPrice = totalPrice * 1; // Apply 50% discount
+      const discountedPrice = totalPrice * 1; // Apply 0% discount
       price.textContent = discountedPrice.toFixed(2);
 
       // Update additional storage message
