@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const storagePrice = storageValueNum * 0.10; // $0.10 per GB of storage 
 
       const totalPrice = ramPrice + cpuPrice + storagePrice - 0.1;
-      const discountedPrice = totalPrice * 1; // Apply 0% discount
+      const discountedPrice = totalPrice * 0.75; // Apply 25% discount
       price.textContent = discountedPrice.toFixed(2);
 
       // Update additional storage message
