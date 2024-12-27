@@ -13,6 +13,12 @@ document.addEventListener('DOMContentLoaded', function() {
   const resourceCpu = document.getElementById('resourceCpu');
   const resourceStorage = document.getElementById('resourceStorage');
 
+  // Cloud storage elements
+  const cloudStorageSlider = document.getElementById('cloudStorageSlider');
+  const cloudStorageValue = document.getElementById('cloudStorageValue');
+  const cloudPrice = document.getElementById('cloudPrice');
+  const cloudResourceStorage = document.getElementById('cloudResourceStorage');
+
   // Pricing logic
   function calculatePrice() {
       const ramValueNum = parseFloat(ramSlider.value);
@@ -36,6 +42,15 @@ document.addEventListener('DOMContentLoaded', function() {
       resourceStorage.textContent = `${storageValueNum} GB + ${additionalStorage} GB additional based on RAM`;
   }
 
+  function calculateCloudPrice() {
+      const cloudStorageValueNum = parseFloat(cloudStorageSlider.value);
+      const cloudStoragePrice = cloudStorageValueNum * 0.02; // $0.02 per GB of cloud storage
+      cloudPrice.textContent = cloudStoragePrice.toFixed(2);
+
+      // Update the cloud resources section
+      cloudResourceStorage.textContent = `${cloudStorageValueNum} GB`;
+  }
+
   // Update pricing and resources when sliders change
   ramSlider.addEventListener('input', () => {
       ramValue.textContent = `${ramSlider.value} GB`;
@@ -52,6 +67,12 @@ document.addEventListener('DOMContentLoaded', function() {
       calculatePrice();
   });
 
+  cloudStorageSlider.addEventListener('input', () => {
+      cloudStorageValue.textContent = `${cloudStorageSlider.value} GB`;
+      calculateCloudPrice();
+  });
+
   // Initial calculation
   calculatePrice();
+  calculateCloudPrice();
 });

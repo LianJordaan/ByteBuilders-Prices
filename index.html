@@ -5,68 +5,109 @@
 </head>
 <body>
     <div class="banner">
-        <h1>🎉 Special Offer: 25% Off on Server Hosting till New Years! 🎉</h1><br>
-        <p>To celebrate Christmas, enjoy a 25% discount on all server hosting plans till New Year. <br> Use our calculator to estimate your server costs and take advantage of this limited-time offer!</p>
+        <h1>🎉 Special Offer: 25% Off on all Gaming Servers till New Years! 🎉</h1><br>
+        <p>To celebrate Christmas, enjoy a 25% discount on all gaming server plans till New Year. <br> Use our calculator to estimate your server costs and take advantage of this limited-time offer!</p>
     </div>
 
-    <div class="calculator">
-        <div class="slider">
-            <label for="ramSlider">RAM (GB):</label>
-            <input type="range" id="ramSlider" min="1" max="24" step="1" value="8">
-            <span id="ramValue">8 GB</span>
+    <div class="calculators">
+        <div class="gaming-server-calculator">
+            <h2 class="gaming-server-heading">Gaming Server Calculator</h2>
+            <div class="slider">
+                <label for="ramSlider">RAM (GB):</label>
+                <input type="range" id="ramSlider" min="1" max="24" step="1" value="8">
+                <span id="ramValue">8 GB</span>
+            </div>
+
+            <div class="slider">
+                <label for="cpuPercentageSlider">CPU Allocation (%):</label>
+                <input type="range" id="cpuPercentageSlider" min="50" max="800" step="10" value="200">
+                <span id="cpuPercentageValue">200%</span>
+            </div>
+
+            <div class="slider">
+                <label for="storageSlider">Storage (GB):</label>
+                <input type="range" id="storageSlider" min="1" max="150" step="1" value="24">
+                <span id="storageValue">24 GB</span>
+            </div>
+
+            <div id="additionalStorageInfo" class="info-box"></div>
+
+            <div class="pricing">
+                Total Price: $<span id="price">7.50</span> per month
+            </div>
         </div>
 
-        <div class="slider">
-            <label for="cpuPercentageSlider">CPU Allocation (%):</label>
-            <input type="range" id="cpuPercentageSlider" min="50" max="800" step="10" value="200">
-            <span id="cpuPercentageValue">200%</span>
-        </div>
+        <div class="cloud-storage-calculator">
+            <h2 class="cloud-storage-heading">Cloud Storage Calculator</h2>
+            <div class="slider">
+                <label for="cloudStorageSlider">Storage (GB):</label>
+                <input type="range" id="cloudStorageSlider" min="10" max="1000" step="1" value="10">
+                <span id="cloudStorageValue">10 GB</span>
+            </div>
 
-        <div class="slider">
-            <label for="storageSlider">Storage (GB):</label>
-            <input type="range" id="storageSlider" min="1" max="150" step="1" value="24">
-            <span id="storageValue">24 GB</span>
-        </div>
-
-        <div id="additionalStorageInfo" class="info-box"></div>
-
-        <div class="pricing">
-            Total Price: $<span id="price">7.50</span> per month
+            <div class="pricing">
+                Total Price: $<span id="cloudPrice">0.20</span> per month
+            </div>
         </div>
     </div>
 
-    <div class="resources">
-        <h2>Resources You Get:</h2>
-        <ul>
-            <li>💻 RAM: <span id="resourceRam">8 GB</span></li>
-            <li>⚙️ CPU Allocation: <span id="resourceCpu">200%</span></li>
-            <li>🗄️ Storage: <span id="resourceStorage">24 GB + Extra Based on RAM</span></li>
-        </ul>
+    <div class="resources-sections">
+        <div class="gaming-server-resources">
+            <h2>Resources You Get (Gaming Server):</h2>
+            <ul>
+                <li>💻 RAM: <span id="resourceRam">8 GB</span></li>
+                <li>⚙️ CPU Allocation: <span id="resourceCpu">200%</span></li>
+                <li>🗄️ Storage: <span id="resourceStorage">24 GB + Extra Based on RAM</span></li>
+            </ul>
+        </div>
+
+        <div class="cloud-storage-resources">
+            <h2>Resources You Get (Cloud Storage):</h2>
+            <ul>
+                <li>🗄️ Storage: <span id="cloudResourceStorage">100 GB</span></li>
+            </ul>
+        </div>
     </div>
 
-    <div class="features">
-        <h2>Our Features</h2>
-        <ul>
-            <li>💨 1Gbps download and download internet speed (currently fixing some connection problems)</li>
-            <li>⚡ High-speed NVME disk storage</li>
-            <li>🖥️ Flexible CPU allocation (up to 800% based on 8 cores)</li>
-            <li>🔒 Secure data with HTTPS encryption</li>
-            <li>🔄 Easy scalability for growing needs</li>
-            <li>📦 3 free backup slots included</li>
-            <li>🛡️ DDoS protection for enhanced security</li>
-            <li>📞 Personalized 24/7 support from our team</li>
-            <li>⚙️ Control panel access for easy management</li>
-            <li>🔗 API access for programmatic interaction</li>
-            <li>🌍 Server location in Germany</li>
-            <li>💳 Flexible billing options available</li>
-            <li>🖥️ User-friendly interface using pterodactyl panel</li>
-            <li>🗂️ Backup creation and restoration capabilities</li>
-            <li>🔌 1 free additional port</li>
-            <li>👥 Ability to add subusers for easier management</li>
-            <li>🗃️ 2 free database included</li>
-            <li>🌐 Free subdomains available (e.g., yourdomain.bytebuilder.co.za)</li>
-        </ul>
-        <p><strong>Note:</strong> Currently, payment is processed manually via PayPal. Please contact us to arrange payment and receive your server details.</p>
+    <div class="features-sections">
+        <div class="features gaming-server-features">
+            <h2>Gaming Server Features</h2>
+            <ul>
+                <li>💨 1Gbps upload and download internet speed</li>
+                <li>⚡ High-speed NVME disk storage</li>
+                <li>🖥️ Flexible CPU allocation (up to 800% based on 8 cores)</li>
+                <li>🔒 Secure data with HTTPS encryption</li>
+                <li>🔄 Easy scalability for growing needs</li>
+                <li>📦 3 free backup slots included</li>
+                <li>🛡️ DDoS protection for enhanced security</li>
+                <li>📞 Personalized 24/7 support from our team</li>
+                <li>⚙️ Control panel access for easy management</li>
+                <li>🔗 API access for programmatic interaction</li>
+                <li>🌍 Server location in Germany</li>
+                <li>💳 Flexible billing options available</li>
+                <li>🖥️ User-friendly interface using pterodactyl panel</li>
+                <li>🗂️ Backup creation and restoration capabilities</li>
+                <li>🔌 1 free additional port</li>
+                <li>👥 Ability to add subusers for easier management</li>
+                <li>🗃️ 2 free database included</li>
+                <li>🌐 Free subdomains available (e.g., yourdomain.bytebuilder.co.za)</li>
+            </ul>
+        </div>
+
+        <div class="features cloud-storage-features">
+            <h2>Cloud Storage Features</h2>
+            <ul>
+                <li>💨 1Gbps upload and 100Mbps download speeds</li>
+                <li>⚡ SSD disk storage</li>
+                <li>🔒 Secure data with HTTP encryption</li>
+                <li>🔄 Easy scalability for growing needs</li>
+                <li>📞 Personalized 24/7 support from our team</li>
+                <li>🔗 API access for programmatic interaction</li>
+                <li>🗂️ Easy-to-use file access using Nextcloud</li>
+                <li>🌍 Server location in USA, Texas</li>
+                <li>💳 Flexible billing options available</li>
+            </ul>
+        </div>
     </div>
 
     <script src="script.js"></script>

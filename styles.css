@@ -27,10 +27,11 @@ body {
   font-size: 18px;
 }
 
-.calculator {
+.gaming-server-calculator {
   width: 80%;
   max-width: 400px;
   margin: 20px auto;
+  margin-right: 20px;
   padding: 20px;
   background-color: #303030;
   border-radius: 10px;
@@ -73,39 +74,80 @@ body {
   color: #00ff00;
 }
 
-.resources {
+.cloud-storage-resources {
   width: 80%;
   max-width: 400px;
   margin: 20px auto;
+  margin-left: 20px;
   padding: 20px;
   background-color: #404040;
   border-radius: 10px;
   box-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
 }
 
-.resources h2 {
+.cloud-storage-resources h2 {
   font-size: 22px;
   margin-bottom: 10px;
 }
 
-.resources ul {
+.cloud-storage-resources ul {
   list-style-type: none;
   padding: 0;
 }
 
-.resources ul li {
+.cloud-storage-resources ul li {
   margin: 10px 0;
 }
-
-.features {
+.gaming-server-resources {
   width: 80%;
-  max-width: fit-content;
+  max-width: 400px;
   margin: 20px auto;
-  padding: 15px;
+  margin-right: 20px;
+  padding: 20px;
   background-color: #404040;
   border-radius: 10px;
   box-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
 }
+
+.gaming-server-resources h2 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.gaming-server-resources ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.gaming-server-resources ul li {
+  margin: 10px 0;
+}
+
+.features-sections {
+  display: flex;
+  justify-content: center;  /* Centers the items horizontally */
+  align-items: flex-start;  /* Aligns the items at the top, preventing vertical alignment */
+  gap: 40px;                /* Adds equal spacing between the items */
+  flex-wrap: nowrap;        /* Prevents wrapping of the items to a new line */
+}
+
+.features {
+  width: 100%;              /* Ensure that each feature takes full width within their container */
+  max-width: 500px;         /* Optional: set a maximum width for each feature container */
+  padding: 15px;
+  background-color: #404040;
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
+  text-align: center;
+  margin: 0;                /* Remove margins to prevent them from affecting alignment */
+}
+
+.gaming-server-features,
+.cloud-storage-features {
+  /* No margin needed, rely on flexbox gap */
+  margin: 0;
+}
+
 
 .features h2 {
   font-size: 22px;
@@ -119,4 +161,52 @@ body {
 
 .features ul li {
   margin: 10px 0;
+}
+
+.gaming-server-heading {
+  background-color: #ff6600;
+  color: #ffffff;
+  padding: 15px;
+  width: 100%;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  margin: 20px auto;
+  margin-top: 0px;
+  max-width: fit-content;
+}
+
+.calculators {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.cloud-storage-calculator {
+  width: 80%;
+  max-width: 400px;
+  margin: 20px auto;
+  margin-left: 20px;
+  padding: 20px;
+  background-color: #303030;
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
+}
+
+.cloud-storage-heading {
+  background-color: #ff6600;
+  color: #ffffff;
+  padding: 15px;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  margin: 20px auto;
+  margin-top: 0px;
+  max-width: fit-content;
+}
+
+.resources-sections {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }
