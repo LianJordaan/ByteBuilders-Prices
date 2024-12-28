@@ -74,6 +74,12 @@ body {
   color: #00ff00;
 }
 
+.pricing-smaller {
+  font-weight: bold;
+  font-size: 20px;
+  color: #00ff00;
+}
+
 .cloud-storage-resources {
   width: 80%;
   max-width: 400px;
@@ -146,6 +152,7 @@ body {
 .cloud-storage-features {
   /* No margin needed, rely on flexbox gap */
   margin: 0;
+  margin-top: 20px;
 }
 
 
