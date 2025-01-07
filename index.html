@@ -5,8 +5,8 @@
 </head>
 <body>
     <div class="banner">
-        <h1>🎉 Special Offer: 25% Off on all Gaming Servers till New Years! 🎉</h1><br>
-        <p>To celebrate Christmas, enjoy a 25% discount on all gaming server plans till New Year. <br> Use our calculator to estimate your server costs and take advantage of this limited-time offer!</p>
+        <h1>🎉 Special Offer: 25% Off on all Gaming Servers for January 2025! 🎉</h1><br>
+        <p>Celebrate the new year with a 25% discount on all gaming server plans during January 2025. <br> Use our calculator to estimate your server costs and take advantage of this limited-time offer!</p>
     </div>
 
     <div class="calculators">
@@ -14,28 +14,41 @@
             <h2 class="gaming-server-heading">Gaming Server Calculator</h2>
             <div class="slider">
                 <label for="ramSlider">RAM (GB):</label>
-                <input type="range" id="ramSlider" min="1" max="24" step="1" value="8">
+                <input type="range" id="ramSlider" min="1" max="32" step="1" value="8">
                 <span id="ramValue">8 GB</span>
             </div>
 
             <div class="slider">
                 <label for="cpuPercentageSlider">CPU Allocation (%):</label>
-                <input type="range" id="cpuPercentageSlider" min="50" max="800" step="10" value="200">
+                <input type="range" id="cpuPercentageSlider" min="50" max="600" step="10" value="200">
                 <span id="cpuPercentageValue">200%</span>
             </div>
 
             <div class="slider">
                 <label for="storageSlider">Storage (GB):</label>
-                <input type="range" id="storageSlider" min="1" max="150" step="1" value="24">
-                <span id="storageValue">24 GB</span>
+                <input type="range" id="storageSlider" min="1" max="50" step="1" value="16">
+                <span id="storageValue">16 GB</span>
+            </div>
+
+            <div class="slider">
+                <label for="monthsDropdown">Number of Months:</label>
+                <select id="monthsDropdown">
+                    <option value="1">1 Month</option>
+                    <option value="2">2 Months</option>
+                    <option value="3">3 Months</option>
+                </select>
             </div>
 
             <div id="additionalStorageInfo" class="info-box"></div>
 
             <div class="pricing-smaller">
-                Total Price: $<span id="full-price">7.50</span> per month<br>
-                Discounted Price: $<span id="discount-price">7.50</span> for first 3 months
+                Total Price: $<span id="full-price">7.50</span> for selected months<br>
             </div>
+            <div class="pricing-smaller discounted-price-text">
+                Discounted Price: $<span id="discount-price">7.50</span> for selected months
+            </div>
+
+            <div id="savingsInfo" class="info-box"></div>
         </div>
 
         <div class="cloud-storage-calculator">
@@ -46,8 +59,17 @@
                 <span id="cloudStorageValue">10 GB</span>
             </div>
 
+            <div class="slider">
+                <label for="cloudMonthsDropdown">Number of Months:</label>
+                <select id="cloudMonthsDropdown">
+                    <option value="1">1 Month</option>
+                    <option value="2">2 Months</option>
+                    <option value="3">3 Months</option>
+                </select>
+            </div>
+
             <div class="pricing">
-                Total Price: $<span id="cloudPrice">0.20</span> per month
+                Total Price: $<span id="cloudPrice">0.20</span> for selected months
             </div>
         </div>
     </div>
@@ -76,7 +98,7 @@
             <ul>
                 <li>💨 1Gbps upload and download internet speed</li>
                 <li>⚡ High-speed NVME disk storage</li>
-                <li>🖥️ Flexible CPU allocation (up to 800% based on 8 cores)</li>
+                <li>🖥️ Flexible CPU allocation (up to 600% based on 6 cores)</li>
                 <li>🔒 Secure data with HTTPS encryption</li>
                 <li>🔄 Easy scalability for growing needs</li>
                 <li>📦 3 free backup slots included</li>
@@ -84,14 +106,14 @@
                 <li>📞 Personalized 24/7 support from our team</li>
                 <li>⚙️ Control panel access for easy management</li>
                 <li>🔗 API access for programmatic interaction</li>
-                <li>🌍 Server location in Germany</li>
+                <li>🌍 Server location in Germany, Frankfurt</li>
                 <li>💳 Flexible billing options available</li>
                 <li>🖥️ User-friendly interface using pterodactyl panel</li>
                 <li>🗂️ Backup creation and restoration capabilities</li>
                 <li>🔌 1 free additional port</li>
                 <li>👥 Ability to add subusers for easier management</li>
                 <li>🗃️ 2 free database included</li>
-                <li>🌐 Free subdomains available (e.g., yourdomain.bytebuilder.co.za)</li>
+                <li>🌐 Free subdomains available (e.g., yourdomain.bytebuilders.co.za)</li>
             </ul>
         </div>
 
@@ -100,7 +122,7 @@
             <ul>
                 <li>💨 1Gbps upload and 100Mbps download speeds</li>
                 <li>⚡ SSD disk storage</li>
-                <li>🔒 Secure data with HTTP encryption</li>
+                <!-- <li>🔒 Secure data with HTTP encryption</li> -->
                 <li>🔄 Easy scalability for growing needs</li>
                 <li>📞 Personalized 24/7 support from our team</li>
                 <li>🔗 API access for programmatic interaction</li>
