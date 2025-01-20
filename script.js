@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const cpuPercentage = parseFloat(cpuPercentageSlider.value);
         const cpuPrice = (cpuPercentage / 100) * 2; // $1.5 per 100% CPU allocation
         const storageValueNum = parseFloat(storageSlider.value);
-        const storagePrice = storageValueNum * 0.10; // $0.10 per GB of storage 
+        const storagePrice = storageValueNum * 0.10 - 0.10; // $0.10 per GB of storage minus a free gb of storage.
   
         const months = parseInt(monthsDropdown.value);
         const totalPrice = (ramPrice + cpuPrice + storagePrice) * months;
