@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Roadmap – ByteBuilders</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #121212;
+      margin: 0;
+      padding: 2rem;
+      color: #e0e0e0;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 2rem;
+      font-size: 2rem;
+      color: #ffffff;
+    }
+
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .card {
+      background: #1e1e1e;
+      padding: 1.5rem;
+      border-left: 5px solid #6366f1;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+      border-radius: 0.5rem;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s ease;
+    }
+
+    .card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .card h2 {
+      margin-top: 0;
+      font-size: 1.25rem;
+      color: #a5b4fc;
+    }
+
+    .card small {
+      color: #9ca3af;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    .card p {
+      color: #d1d5db;
+    }
+
+    @media (max-width: 600px) {
+      .card {
+        padding: 1rem;
+      }
+    }
+
+    .card.done {
+  border-left-color: #10b981;
+  background-color: #1a2a1a;
+  opacity: 0.6;
+  position: relative;
+}
+
+.card.done::before {
+  content: "✓ Done";
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  color: #10b981;
+  font-weight: bold;
+}
+
+.mark-done-btn {
+  margin-top: 1rem;
+  background-color: #2c2c2c;
+  border: none;
+  color: #9ca3af;
+  padding: 0.5rem 1rem;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.mark-done-btn:hover {
+  background-color: #374151;
+}
+
+  </style>
+</head>
+<body>
+
+<h1>🚀 2025 Roadmap – ByteBuilders</h1>
+
+<div class="timeline">
+  <div class="card">
+    <h2>🎉 Early Birthday Sale (19%)</h2>
+    <small>May 17 – 31</small>
+    <p>Early celebration for my 19th birthday! All server plans are 19% off for first payments.</p>
+  </div>
+
+  <div class="card done">
+    <h2>🌎 Launch NA Node (Canada)</h2>
+    <small>By May 30</small>
+    <p>Expand into North America with a brand-new Canadian node for lower latency in the region.</p>
+  </div>
+
+  <div class="card">
+    <h2><img src="https://flagcdn.com/w40/nl.png" style="height:1em;vertical-align:middle;"> Netherlands Node</h2>
+    <small>June</small>
+    <p>Launch a new EU node in the Netherlands in partnership with another provider.</p>
+  </div>
+
+  <div class="card">
+    <h2>🧪 Node Testing & Feedback</h2>
+    <small>June – July</small>
+    <p>Collect user feedback from the NA and Netherlands nodes to improve performance balancing.</p>
+  </div>
+
+  <div class="card">
+    <h2>📈 Grow Revenue</h2>
+    <small>July – August</small>
+    <p>Push toward the $70/month income goal to break even and unlock automated billing setup.</p>
+  </div>
+
+  <div class="card">
+    <h2>💻 Coding Server – Alpha</h2>
+    <small>August</small>
+    <p>Start closed development and testing of the coding-based Minecraft server.</p>
+  </div>
+
+  <div class="card">
+    <h2>💻 Coding Server – Beta</h2>
+    <small>September – October</small>
+    <p>Release a playable beta of my coding-based Minecraft server. This is my top priority project.</p>
+  </div>
+
+  <div class="card">
+    <h2>💸 Billing System</h2>
+    <small>September – October</small>
+    <p>Integrate a full billing panel to handle purchases and server management.</p>
+  </div>
+
+  <div class="card">
+    <h2>♾️ Unlimited Free Storage</h2>
+    <small>October – December</small>
+    <p>Introduce expandable, free storage with a default limit and request-based upgrades. Abuse will lead to suspension.</p>
+  </div>
+
+  <div class="card">
+    <h2>🧠 Coding Server – Public Beta</h2>
+    <small>December</small>
+    <p>Launch a public beta for the coding server with admin tools and feedback improvements.</p>
+  </div>
+
+  <div class="card">
+    <h2>✅ Billing System Finalized</h2>
+    <small>By December 31</small>
+    <p>Billing panel is 100% done and live. No more manual billing!</p>
+  </div>
+</div>
+
+
+<script>
+  // Fade in cards on scroll
+  const cards = document.querySelectorAll('.card');
+
+// add visisble class to all cards
+  cards.forEach(card => {
+    card.classList.add('visible');
+  });
+
+//   const observer = new IntersectionObserver(entries => {
+//     entries.forEach(entry => {
+//       if (entry.isIntersecting) {
+//         entry.target.classList.add('visible');
+//         observer.unobserve(entry.target);
+//       }
+//     });
+//   }, {
+//     threshold: 0.1
+//   });
+
+//   cards.forEach(card => observer.observe(card));
+</script>
+
+</body>
+</html>
